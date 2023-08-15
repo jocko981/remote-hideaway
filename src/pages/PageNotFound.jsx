@@ -28,6 +28,13 @@ const Box = styled.div`
   }
 `;
 
+const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+`;
+
 function PageNotFound() {
   const moveBack = useMoveBack();
 
@@ -36,9 +43,15 @@ function PageNotFound() {
       <Box>
         <Heading as="h1">The page you are looking for could not be found 😢</Heading>
 
-        <Button onClick={moveBack} $size="large">
-          &larr; Go back
-        </Button>
+        <Buttons>
+          <Button onClick={moveBack} $variation="secondary" $size="large">
+            &larr; Go back
+          </Button>
+
+          <Button onClick={moveBack} $size="large">
+            &larr; Index page
+          </Button>
+        </Buttons>
       </Box>
     </StyledPageNotFound>
   );
