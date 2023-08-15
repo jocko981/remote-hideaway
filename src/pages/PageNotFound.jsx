@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useMoveBack } from "../hooks/useMoveBack";
 import Heading from "../ui/Heading";
 import Button from "../ui/Button";
+import { Link } from "react-router-dom";
 
 const StyledPageNotFound = styled.main`
   height: 100vh;
@@ -44,13 +45,14 @@ function PageNotFound() {
         <Heading as="h1">The page you are looking for could not be found 😢</Heading>
 
         <Buttons>
-          <Button onClick={moveBack} $variation="secondary" $size="large">
+          <Button onClick={moveBack} $variation="secondary" $size="large" type="button">
             &larr; Go back
           </Button>
-
-          <Button onClick={moveBack} $size="large">
-            &larr; Index page
-          </Button>
+          <Link to="/">
+            <Button $size="large" type="button">
+              &larr; Index page
+            </Button>
+          </Link>
         </Buttons>
       </Box>
     </StyledPageNotFound>
