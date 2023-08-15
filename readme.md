@@ -5,7 +5,7 @@ Project is written in React.js with Vite build tool, has protected routes. Imple
 
 ## Description
 
-- Users of the app are hotem employees. They need to be logged to perform tasks. New users can be signed up inside the app (to guarantee that actual hotel employees can get accounts). Users can upload an avatar, change their name and password.
+- Users of the app are hotel employees. They need to be logged to perform tasks. New users can be signed up inside the app (to guarantee that actual hotel employees can get accounts). Users can upload an avatar, change their name and password.
 
 - App needs table view for Cabins, cabin photo, name, capacity, price, discount. Users can create, edit, delete cabins.
 
