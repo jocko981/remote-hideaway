@@ -8,18 +8,14 @@ import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 import { styled } from "styled-components";
 
-const CurrentImageUrlWrap = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-`;
-
 const CurrentImageUrl = styled.div`
   background-size: cover;
   background-image: url(${(props) => props.$url});
   height: 14.4rem;
   aspect-ratio: 1/1;
-  margin: 0.8rem 0;
+
+  object-fit: cover;
+  object-position: center;
 `;
 
 function EditCabinForm({ cabinToEdit = {}, isEditing, editCabin, closeModal }) {
@@ -127,10 +123,9 @@ function EditCabinForm({ cabinToEdit = {}, isEditing, editCabin, closeModal }) {
       </FormRow>
 
       {cabinToEdit.imageUrl && (
-        <CurrentImageUrlWrap>
-          <span>Current image:</span>
+        <FormRow label="Current image:">
           <CurrentImageUrl $url={cabinToEdit.imageUrl} />
-        </CurrentImageUrlWrap>
+        </FormRow>
       )}
 
       <FormRow label="Cabin photo Url/File" error={errors?.image?.message}>

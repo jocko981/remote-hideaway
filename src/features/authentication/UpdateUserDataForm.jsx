@@ -10,17 +10,10 @@ import Input from "../../ui/Input";
 import { useCurrentUser } from "./useCurrentUser";
 import { useUpdateCurrentUser } from "./useUpdateCurrentUser";
 
-const CurrentImageUrlWrap = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1.6rem;
-  margin-top: 0.8rem;
-`;
-
 const CurrentAvatarUrl = styled.div`
   background-size: cover;
   background-image: url(${(props) => props.$url});
-  width: 14.4rem;
+  height: 14.4rem;
   aspect-ratio: 1/1;
 
   object-fit: cover;
@@ -82,10 +75,9 @@ function UpdateUserDataForm() {
         </FormRow>
 
         {currentAvatarUrl && (
-          <CurrentImageUrlWrap>
-            <span>Current avatar:</span>
+          <FormRow label="Current avatar:">
             <CurrentAvatarUrl $url={currentAvatarUrl} />
-          </CurrentImageUrlWrap>
+          </FormRow>
         )}
 
         <FormRow label="Avatar image">
